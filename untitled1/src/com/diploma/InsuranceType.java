@@ -1,6 +1,7 @@
 package com.diploma;
 
 import javax.swing.*;
+import javax.swing.table.TableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,6 +16,7 @@ public class InsuranceType {
     ResultSet rs = null;
 
     JFrame frame = new JFrame();
+    private JTable resultTable;
 
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
@@ -102,5 +104,18 @@ public class InsuranceType {
         frame.getContentPane().add(button);
         button.setBorder(BorderFactory.createEmptyBorder());
         button.setContentAreaFilled(false);
+    }
+
+    private void updateTable() {
+        String sql = "select * from Insurance_type";
+        //resultTable.setBounds(50, 300, 700, 200);
+        frame.getContentPane().add(resultTable);
+        try {
+            pst = conn.prepareStatement(sql);
+            rs = pst.executeQuery();
+            resultTable.setModel(new InsuranseTableModel(3));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
     }
 }
