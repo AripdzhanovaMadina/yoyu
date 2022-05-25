@@ -36,7 +36,7 @@ public class WelcomePage {
                 = new JButton(icon1);
 
         button1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e) {InsuranceType.main(new String[0]);
             }
         });
 // Задаем размещение и размеры кнопки

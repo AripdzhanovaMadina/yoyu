@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Calendar;
 
 public class InsuranceType {
     Connection conn = null;
@@ -36,20 +38,21 @@ public class InsuranceType {
 
 
 
-    public InsuranceType() throws IOException {
+    public InsuranceType() throws IOException{
         initialize();
     }
 
     private void initialize() throws IOException {
         conn = Database.ConnecrDB();
-        frame.setBounds(300, 300, 800, 600);
+        frame.setBounds(300, 300, 500, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(null);
         frame.getContentPane().setBackground(new java.awt.Color(247, 251, 252));
 
+
         JLabel insuranceType = new JLabel("Вид страхования");
         insuranceType.setFont(new Font(null,Font.PLAIN,20));
-        insuranceType.setBounds(300, 20, 200, 30);
+        insuranceType.setBounds(200, 20, 200, 30);
         frame.getContentPane().add(insuranceType);
 
         JLabel codeLabel = new JLabel("Код");
@@ -68,23 +71,81 @@ public class InsuranceType {
         frame.getContentPane().add(percentLabel);
 
         JTextField codeTextField = new JTextField();
-        codeTextField.setBounds(170, 60, 300, 20);
+        codeTextField.setBounds(170, 65, 300, 20);
         frame.getContentPane().add(codeTextField);
         codeTextField.setColumns(10);
 
         JTextField nameTextField = new JTextField();
-        nameTextField.setBounds(170, 100, 300, 20);
+        nameTextField.setBounds(170, 105, 300, 20);
         frame.getContentPane().add(nameTextField);
         nameTextField.setColumns(10);
 
         JTextField percentageTextField = new JTextField();
-        percentageTextField.setBounds(170, 140, 300, 20);
+        percentageTextField.setBounds(170, 145, 300, 20);
         frame.getContentPane().add(percentageTextField);
         percentageTextField.setColumns(10);
 
-        Icon icon1 = new ImageIcon("src/resources/button_dobavit.png");
 
-        JButton button = new JButton(icon1);
+
+        Icon icon1 = new ImageIcon("src/resources/button_obnovit.png");
+        JButton button3 = new JButton(icon1);
+        button3.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                try{
+                String sql = "UPDATE Insurance_type SET "
+
+                        +  " Code = " + codeTextField.getText()+","
+                            +  " Name = '" + nameTextField.getText()+"',"
+                            +  " Percent = " + percentageTextField.getText()+ " WHERE Code = " +codeTextField.getText();
+
+
+                        pst = conn.prepareStatement(sql);
+                        pst.execute();
+
+                    JOptionPane.showMessageDialog(null, "Изменено успешно");
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, e);
+                }
+            }
+        });
+        button3.setBounds(100, 210, 150, 25);
+        frame.getContentPane().add(button3);
+        button3.setBorder(BorderFactory.createEmptyBorder());
+        button3.setContentAreaFilled(false);
+
+        Icon icon4 = new ImageIcon("src/resources/button_udalit.png");
+        JButton button4 = new JButton(icon4);
+        button4.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                try{
+                    String sql = "DELETE FROM Insurance_type WHERE Code = ?";
+                    pst = conn.prepareStatement(sql);
+                    pst.execute();
+                    JOptionPane.showMessageDialog(null, "Удалено успешно");
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, e);
+                }
+            }
+        });
+        button4.setBounds(300, 210, 150, 25);
+        frame.getContentPane().add(button4);
+        button4.setBorder(BorderFactory.createEmptyBorder());
+        button4.setContentAreaFilled(false);
+
+
+        Icon icon2 = new ImageIcon("src/resources/button_otkryt-tablicu.png");
+        JButton button1 = new JButton(icon2);
+        button1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {JFrame1.main(new String[0]);}
+        });
+        button1.setBounds(100, 180, 150, 25);
+        frame.getContentPane().add(button1);
+        button1.setBorder(BorderFactory.createEmptyBorder());
+        button1.setContentAreaFilled(false);
+
+
+        Icon icon3 = new ImageIcon("src/resources/button_dobavit.png");
+        JButton button = new JButton(icon3);
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 String sql = "INSERT INTO Insurance_type(Code, Name, Percent) VALUES (?, ?, ?)";
@@ -94,6 +155,9 @@ public class InsuranceType {
                     pst.setString(2, nameTextField.getText());
                     pst.setInt(3, Integer.valueOf(percentageTextField.getText()));
                     pst.execute();
+                    updateTable();
+
+
                     JOptionPane.showMessageDialog(null, "Добавлено успешно");
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(null, e);
@@ -104,18 +168,28 @@ public class InsuranceType {
         frame.getContentPane().add(button);
         button.setBorder(BorderFactory.createEmptyBorder());
         button.setContentAreaFilled(false);
+
+
+
     }
 
+
+
     private void updateTable() {
+        JTable table = new JTable(new InsuranseTableModel());
         String sql = "select * from Insurance_type";
         //resultTable.setBounds(50, 300, 700, 200);
+        frame.add(new JScrollPane(table));
         frame.getContentPane().add(resultTable);
         try {
             pst = conn.prepareStatement(sql);
             rs = pst.executeQuery();
-            resultTable.setModel(new InsuranseTableModel(3));
+            resultTable.setModel(new InsuranseTableModel());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
+
     }
+
+
 }

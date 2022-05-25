@@ -5,13 +5,6 @@ import javax.swing.table.TableModel;
 
 public class InsuranseTableModel implements TableModel {
 
-    public InsuranseTableModel(
-        int rowCount
-
-    ){
-
-    }
-
     @Override
     public int getRowCount() {
         return 10;
