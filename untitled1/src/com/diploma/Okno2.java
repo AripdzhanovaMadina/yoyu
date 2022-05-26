@@ -37,7 +37,7 @@ public class Okno2 {
     }
 
     /**
-     * 
+     *
      */
    public static final Color white     = new Color(247, 251, 252);
 // Конструктор класса нашего приложения
@@ -66,7 +66,7 @@ public class Okno2 {
         frame.getContentPane().setBackground(new java.awt.Color(247, 251, 252));
 
 
-        Icon icon1 = new ImageIcon("src/resources/button_vid-straxovaniya.PNG");
+        Icon icon1 = new ImageIcon("src/resources/button_zapros-vid-straxovaniya.png");
         // Создается локальная переменная button
         JButton button1
 // создается кнопка с надписью
@@ -77,48 +77,48 @@ public class Okno2 {
             }
         });
 // Задаем размещение и размеры кнопки
-        button1.setBounds(70, 140, 150, 25);
+        button1.setBounds(40, 140, 210, 30);
 // Добавляем кнопку на frame - окно приложения
         frame.getContentPane().add(button1);
         button1.setBorder(BorderFactory.createEmptyBorder());
         button1.setContentAreaFilled(false);
 
-        Icon icon2 = new ImageIcon("src/resources/button_dogovor.PNG");
+        Icon icon2 = new ImageIcon("src/resources/button_zapros-summa-dogovora.png");
         JButton button2 = new JButton(icon2);
         button2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             }
         });
-        button2.setBounds(70, 185, 150, 25);
+        button2.setBounds(40, 185, 210, 30);
         frame.getContentPane().add(button2);
         button2.setBorder(BorderFactory.createEmptyBorder());
         button2.setContentAreaFilled(false);
 
-         Icon icon3 = new ImageIcon("src/resources/button_sotrudniki.PNG");
+         Icon icon3 = new ImageIcon("src/resources/button_zapros-sotrudniki.png");
         JButton button3 = new JButton(icon3);
         button3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             }
         });
-        button3.setBounds(70, 230, 150, 25);
+        button3.setBounds(40, 230, 210, 30);
         frame.getContentPane().add(button3);
         button3.setBorder(BorderFactory.createEmptyBorder());
         button3.setContentAreaFilled(false);
 
-        Icon icon4 = new ImageIcon("src/resources/button_filialy.PNG");
+        Icon icon4 = new ImageIcon("src/resources/button_zapros-filial.png");
         JButton button4 = new JButton(icon4);
         button4.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             }
         });
-        button4.setBounds(70, 275, 150, 25);
+        button4.setBounds(40, 275, 210, 30);
         frame.getContentPane().add(button4);
         button4.setBorder(BorderFactory.createEmptyBorder());
         button4.setContentAreaFilled(false);
 
-        Icon icon5 = new ImageIcon("src/resources/button_zaprosy.PNG");
+        Icon icon5 = new ImageIcon("src/resources/button_nazad1.PNG");
         JButton button5 = new JButton(icon5);
-        button5.setBounds(70, 320, 150, 25);
+        button5.setBounds(40, 320, 210, 30);
         frame.getContentPane().add(button5);
         button5.setBorder(BorderFactory.createEmptyBorder());
         button5.setContentAreaFilled(false);
@@ -127,6 +127,8 @@ public class Okno2 {
         JLabel Venera = new JLabel(icon6);
         Venera.setBounds(250, 40, 500, 500);
         frame.getContentPane().add(Venera);
+
+
 
     }
 }

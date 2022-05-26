@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class Database {
     Connection conn = null;
@@ -13,6 +14,7 @@ public class Database {
         try{
             Class.forName("org.sqlite.JDBC");
             Connection conn = DriverManager.getConnection("jdbc:sqlite:src/resources/Insurance Company.db");
+            Statement statement = conn.createStatement();
             JOptionPane.showMessageDialog(null, "Connection");
             return conn;
         } catch (Exception e){

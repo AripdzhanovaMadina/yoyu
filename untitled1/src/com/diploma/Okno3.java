@@ -1,5 +1,5 @@
 package com.diploma;// Импорт нужных классов
-import java.awt.EventQueue;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
@@ -112,6 +112,7 @@ public class Okno3 {
 // Создается локальная переменная label
         button1.setBorder(BorderFactory.createEmptyBorder());
         button1.setContentAreaFilled(false);
+
 
     }
 }

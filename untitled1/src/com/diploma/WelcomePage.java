@@ -49,7 +49,7 @@ public class WelcomePage {
         Icon icon2 = new ImageIcon("src/resources/button_dogovor.PNG");
         JButton button2 = new JButton(icon2);
         button2.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e) {Contract.main(new String[0]);
             }
         });
         button2.setBounds(70, 185, 150, 25);
@@ -60,7 +60,7 @@ public class WelcomePage {
         Icon icon3 = new ImageIcon("src/resources/button_sotrudniki.PNG");
         JButton button3 = new JButton(icon3);
         button3.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e) {Employees.main(new String[0]);
             }
         });
         button3.setBounds(70, 230, 150, 25);
@@ -71,7 +71,7 @@ public class WelcomePage {
         Icon icon4 = new ImageIcon("src/resources/button_filialy.PNG");
         JButton button4 = new JButton(icon4);
         button4.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e) {Branch.main(new String[0]);
             }
         });
         button4.setBounds(70, 275, 150, 25);
@@ -81,6 +81,10 @@ public class WelcomePage {
 
         Icon icon5 = new ImageIcon("src/resources/button_zaprosy.PNG");
         JButton button5 = new JButton(icon5);
+        button1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {Okno2.main(new String[0]);
+            }
+        });
         button5.setBounds(70, 320, 150, 25);
         frame.getContentPane().add(button5);
         button5.setBorder(BorderFactory.createEmptyBorder());
