@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 // Импортируются классы JButton и JLabel
 
 // класс приложения
-public class Okno2 {
+public class Requests {
     // Окно приложения
     public JFrame frame;
 
@@ -24,7 +24,7 @@ public class Okno2 {
             public void run() {
                 try {
 // Создание объекта нашего класса
-                    Okno2 window = new Okno2();
+                    Requests window = new Requests();
 // Окно приложения делается видимым
 // Пока его не закроют – наше приложение
 // будет работать
@@ -39,12 +39,12 @@ public class Okno2 {
     /**
      *
      */
-   public static final Color white     = new Color(247, 251, 252);
+    public static final Color white     = new Color(247, 251, 252);
 // Конструктор класса нашего приложения
     /**
      * Create the application.
      */
-    public Okno2() throws IOException {
+    public Requests() throws IOException {
         initialize();
 
     }
@@ -95,7 +95,7 @@ public class Okno2 {
         button2.setBorder(BorderFactory.createEmptyBorder());
         button2.setContentAreaFilled(false);
 
-         Icon icon3 = new ImageIcon("src/resources/button_zapros-sotrudniki.png");
+        Icon icon3 = new ImageIcon("src/resources/button_zapros-sotrudniki.png");
         JButton button3 = new JButton(icon3);
         button3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

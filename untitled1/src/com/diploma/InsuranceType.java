@@ -44,7 +44,7 @@ public class InsuranceType {
 
     private void initialize() throws IOException {
         conn = Database.ConnecrDB();
-        frame.setBounds(300, 300, 500, 300);
+        frame.setBounds(300, 300, 500, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(null);
         frame.getContentPane().setBackground(new java.awt.Color(247, 251, 252));
@@ -155,7 +155,7 @@ public class InsuranceType {
                     pst.setString(2, nameTextField.getText());
                     pst.setInt(3, Integer.valueOf(percentageTextField.getText()));
                     pst.execute();
-                    updateTable();
+
 
 
                     JOptionPane.showMessageDialog(null, "Добавлено успешно");
@@ -171,25 +171,10 @@ public class InsuranceType {
 
 
 
-    }
-
-
-
-    private void updateTable() {
-        JTable table = new JTable(new InsuranseTableModel());
-        String sql = "select * from Insurance_type";
-        //resultTable.setBounds(50, 300, 700, 200);
-        frame.add(new JScrollPane(table));
-        frame.getContentPane().add(resultTable);
-        try {
-            pst = conn.prepareStatement(sql);
-            rs = pst.executeQuery();
-            resultTable.setModel(new InsuranseTableModel());
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }
 
     }
+
+
 
 
 }

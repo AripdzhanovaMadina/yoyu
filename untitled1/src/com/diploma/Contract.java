@@ -182,7 +182,7 @@ public class Contract {
         button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {JFrame1.main(new String[0]);}
         });
-        button1.setBounds(100, 250, 150, 25);
+        button1.setBounds(100, 380, 150, 25);
         frame.getContentPane().add(button1);
         button1.setBorder(BorderFactory.createEmptyBorder());
         button1.setContentAreaFilled(false);
@@ -210,7 +210,7 @@ public class Contract {
                 }
             }
         });
-        button.setBounds(300, 250, 150, 25);
+        button.setBounds(300, 380, 150, 25);
         frame.getContentPane().add(button);
         button.setBorder(BorderFactory.createEmptyBorder());
         button.setContentAreaFilled(false);

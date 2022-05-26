@@ -44,13 +44,13 @@ public class Branch {
 
     private void initialize() throws IOException {
         conn = Database.ConnecrDB();
-        frame.setBounds(300, 300, 500, 300);
+        frame.setBounds(300, 300, 500, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(null);
         frame.getContentPane().setBackground(new java.awt.Color(247, 251, 252));
 
 
-        JLabel insuranceType = new JLabel("Вид страхования");
+        JLabel insuranceType = new JLabel("Филиалы");
         insuranceType.setFont(new Font(null,Font.PLAIN,20));
         insuranceType.setBounds(200, 20, 200, 30);
         frame.getContentPane().add(insuranceType);
@@ -118,7 +118,7 @@ public class Branch {
                 }
             }
         });
-        button3.setBounds(100, 210, 150, 25);
+        button3.setBounds(100, 230, 150, 25);
         frame.getContentPane().add(button3);
         button3.setBorder(BorderFactory.createEmptyBorder());
         button3.setContentAreaFilled(false);
@@ -137,7 +137,7 @@ public class Branch {
                 }
             }
         });
-        button4.setBounds(300, 210, 150, 25);
+        button4.setBounds(300, 230, 150, 25);
         frame.getContentPane().add(button4);
         button4.setBorder(BorderFactory.createEmptyBorder());
         button4.setContentAreaFilled(false);
@@ -148,7 +148,7 @@ public class Branch {
         button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {JFrame1.main(new String[0]);}
         });
-        button1.setBounds(100, 180, 150, 25);
+        button1.setBounds(100, 260, 150, 25);
         frame.getContentPane().add(button1);
         button1.setBorder(BorderFactory.createEmptyBorder());
         button1.setContentAreaFilled(false);
@@ -175,7 +175,7 @@ public class Branch {
                 }
             }
         });
-        button.setBounds(300, 180, 150, 25);
+        button.setBounds(300, 260, 150, 25);
         frame.getContentPane().add(button);
         button.setBorder(BorderFactory.createEmptyBorder());
         button.setContentAreaFilled(false);

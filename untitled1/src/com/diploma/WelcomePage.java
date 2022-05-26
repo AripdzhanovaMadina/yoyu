@@ -9,12 +9,14 @@ import java.sql.ResultSet;
 import javax.swing.*;
 
 public class WelcomePage {
+
     Connection conn = null;
     PreparedStatement pst = null;
     ResultSet rs = null;
 
     JFrame frame = new JFrame();
     JLabel welcomeLabel = new JLabel();
+
 
     WelcomePage(String userID){
         conn = Database.ConnecrDB();
@@ -29,6 +31,7 @@ public class WelcomePage {
         frame.getContentPane().setLayout(null);
         frame.getContentPane().setBackground(new java.awt.Color(247, 251, 252));
         frame.setVisible(true);
+
         Icon icon1 = new ImageIcon("src/resources/button_vid-straxovaniya.PNG");
         // Создается локальная переменная button
         JButton button1
@@ -36,7 +39,8 @@ public class WelcomePage {
                 = new JButton(icon1);
 
         button1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {InsuranceType.main(new String[0]);
+            public void actionPerformed(ActionEvent e) {
+                InsuranceType.main(new String[0]);
             }
         });
 // Задаем размещение и размеры кнопки
@@ -81,13 +85,14 @@ public class WelcomePage {
 
         Icon icon5 = new ImageIcon("src/resources/button_zaprosy.PNG");
         JButton button5 = new JButton(icon5);
-        button1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {Okno2.main(new String[0]);
-            }
-        });
-        button5.setBounds(70, 320, 150, 25);
-        frame.getContentPane().add(button5);
-        button5.setBorder(BorderFactory.createEmptyBorder());
+       button1.addActionListener(new ActionListener() {
+           public void actionPerformed(ActionEvent e) {
+               Requests.main(new String[0]);
+           }
+       });
+       button5.setBounds(70, 320, 150, 25);
+       frame.getContentPane().add(button5);
+       button5.setBorder(BorderFactory.createEmptyBorder());
         button5.setContentAreaFilled(false);
 
         ImageIcon icon6 =  new ImageIcon("src/resources/Venera.PNG");
@@ -95,4 +100,7 @@ public class WelcomePage {
         Venera.setBounds(250, 40, 500, 500);
         frame.getContentPane().add(Venera);
     }
-}
+
+
+
+    }
