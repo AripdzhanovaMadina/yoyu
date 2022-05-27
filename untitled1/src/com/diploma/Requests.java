@@ -106,7 +106,7 @@ public class Requests {
         button3.setBorder(BorderFactory.createEmptyBorder());
         button3.setContentAreaFilled(false);
 
-        Icon icon4 = new ImageIcon("src/resources/button_zapros-filial.png");
+        Icon icon4 = new ImageIcon("src/resources/button_zapros-filialy.png");
         JButton button4 = new JButton(icon4);
         button4.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

@@ -96,7 +96,6 @@ public class Request2 {
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(null, e);
                 }
-
             }
         });
         button.setBounds(200, 280, 150, 25);
@@ -104,7 +103,17 @@ public class Request2 {
         button.setBorder(BorderFactory.createEmptyBorder());
         button.setContentAreaFilled(false);
 
-
+        Icon icon5 = new ImageIcon("src/resources/button_nazad.PNG");
+        JButton button5 = new JButton(icon5);
+        button5.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                Requests.main(new String[0]);
+            }
+        });
+        button5.setBounds(200, 320, 150, 25);
+        frame.getContentPane().add(button5);
+        button5.setBorder(BorderFactory.createEmptyBorder());
+        button5.setContentAreaFilled(false);
 
 
     }
