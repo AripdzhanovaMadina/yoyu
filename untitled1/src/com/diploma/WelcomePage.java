@@ -88,7 +88,7 @@ public class WelcomePage {
 
         Icon icon5 = new ImageIcon("src/resources/button_zaprosy.PNG");
         JButton button5 = new JButton(icon5);
-        button1.addActionListener(new ActionListener() {
+        button5.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 Requests.main(new String[0]);
             }

@@ -78,11 +78,15 @@ public class Request1 {
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 try {
-                    String sql  = "SELECT * FROM contract\n" +
-                            "WHERE name IN ('?');";
-                    pst = conn.prepareStatement(sql);
-                    pst.execute();
-
+                    String sqlPrefix  = "SELECT * FROM contract WHERE name IN (\'" ;
+                    StringBuilder sql = new StringBuilder(sqlPrefix).append(codeTextField.getText()).append("\')");
+                    pst = conn.prepareStatement(sql.toString());
+                    ResultSet contractResultSet = pst.executeQuery();
+                    StringBuilder contractsResult = new StringBuilder();
+                    while (contractResultSet.next()){
+                        contractsResult.append(contractResultSet.getString(2)).append("\n");
+                    }
+                    textFieldFactorial.setText(contractsResult.toString());
                     JOptionPane.showMessageDialog(null, "Выполенено успешно");
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(null, e);
