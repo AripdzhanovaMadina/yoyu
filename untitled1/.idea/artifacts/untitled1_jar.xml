@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="untitled1:jar">
+    <output-path>$PROJECT_DIR$/../../../../Diploma</output-path>
+    <root id="archive" name="Diploma.jar">
+      <element id="module-output" name="untitled1" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SQLite/sqlite-jdbc-3.36.0.3.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

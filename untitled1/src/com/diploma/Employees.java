@@ -139,8 +139,9 @@ public class Employees {
         button4.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 try{
-                    String sql = "DELETE FROM Employees WHERE Agent = ?";
-                    pst = conn.prepareStatement(sql);
+                    String sqlPrefix = "DELETE FROM Employees WHERE Agent = ";
+                    StringBuilder sql = new StringBuilder(sqlPrefix).append(agentTextField.getText());
+                    pst = conn.prepareStatement(sql.toString());
                     pst.execute();
                     JOptionPane.showMessageDialog(null, "Удалено успешно");
                 } catch (Exception e) {

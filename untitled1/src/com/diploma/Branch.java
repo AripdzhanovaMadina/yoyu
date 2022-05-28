@@ -118,7 +118,7 @@ public class Branch {
                 }
             }
         });
-        button3.setBounds(100, 230, 150, 25);
+        button3.setBounds(100, 260, 150, 25);
         frame.getContentPane().add(button3);
         button3.setBorder(BorderFactory.createEmptyBorder());
         button3.setContentAreaFilled(false);
@@ -128,8 +128,9 @@ public class Branch {
         button4.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 try{
-                    String sql = "DELETE FROM Branch WHERE code = ?";
-                    pst = conn.prepareStatement(sql);
+                    String sqlPrefix = "DELETE FROM Branch WHERE code = ";
+                    StringBuilder sql = new StringBuilder(sqlPrefix).append(codeTextField.getText());
+                    pst = conn.prepareStatement(sql.toString());
                     pst.execute();
                     JOptionPane.showMessageDialog(null, "Удалено успешно");
                 } catch (Exception e) {
@@ -137,7 +138,7 @@ public class Branch {
                 }
             }
         });
-        button4.setBounds(300, 230, 150, 25);
+        button4.setBounds(300, 260, 150, 25);
         frame.getContentPane().add(button4);
         button4.setBorder(BorderFactory.createEmptyBorder());
         button4.setContentAreaFilled(false);
@@ -148,7 +149,7 @@ public class Branch {
         button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {JFrame1.main(new String[0]);}
         });
-        button1.setBounds(100, 260, 150, 25);
+        button1.setBounds(100, 230, 150, 25);
         frame.getContentPane().add(button1);
         button1.setBorder(BorderFactory.createEmptyBorder());
         button1.setContentAreaFilled(false);
@@ -175,7 +176,7 @@ public class Branch {
                 }
             }
         });
-        button.setBounds(300, 260, 150, 25);
+        button.setBounds(300, 230, 150, 25);
         frame.getContentPane().add(button);
         button.setBorder(BorderFactory.createEmptyBorder());
         button.setContentAreaFilled(false);

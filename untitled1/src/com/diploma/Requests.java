@@ -74,7 +74,7 @@ public class Requests {
                 = new JButton(icon1);
 
         button1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e) {Request1.main(new String[0]);
             }
         });
 // Задаем размещение и размеры кнопки
@@ -84,10 +84,10 @@ public class Requests {
         button1.setBorder(BorderFactory.createEmptyBorder());
         button1.setContentAreaFilled(false);
 
-        Icon icon2 = new ImageIcon("src/resources/button_zapros-summa-dogovora.png");
+        Icon icon2 = new ImageIcon("src/resources/button_zapros-data.png");
         JButton button2 = new JButton(icon2);
         button2.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e) {Request2.main(new String[0]);
             }
         });
         button2.setBounds(40, 185, 210, 30);
@@ -98,7 +98,7 @@ public class Requests {
         Icon icon3 = new ImageIcon("src/resources/button_zapros-sotrudniki.png");
         JButton button3 = new JButton(icon3);
         button3.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e) {Request3.main(new String[0]);
             }
         });
         button3.setBounds(40, 230, 210, 30);
@@ -109,7 +109,7 @@ public class Requests {
         Icon icon4 = new ImageIcon("src/resources/button_zapros-filialy.png");
         JButton button4 = new JButton(icon4);
         button4.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e) {Request4.main(new String[0]);
             }
         });
         button4.setBounds(40, 275, 210, 30);

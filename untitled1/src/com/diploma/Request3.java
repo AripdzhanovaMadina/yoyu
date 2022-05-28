@@ -67,9 +67,9 @@ public class Request3 {
         frame.getContentPane().add(labelFactorial);
         codeTextField.setColumns(10);
 
-        textFieldFactorial = new JTextField();
+        JTextArea textFieldFactorial = new JTextArea();
         textFieldFactorial.setEditable(false);
-        textFieldFactorial.setBounds(170, 120, 300, 140);
+        textFieldFactorial.setBounds(170, 120, 500, 200);
         frame.getContentPane().add(textFieldFactorial);
         textFieldFactorial.setColumns(10);
 
@@ -78,11 +78,22 @@ public class Request3 {
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 try {
-                    String sql  = "SELECT * FROM contract\n" +
-                            "WHERE Branch IN ('?');";
-                    pst = conn.prepareStatement(sql);
-                    pst.execute();
-
+                    String sqlPrefix  = "SELECT * FROM Employees WHERE code IN (\'" ;
+                    StringBuilder sql = new StringBuilder(sqlPrefix).append(codeTextField.getText()).append("\')");
+                    pst = conn.prepareStatement(sql.toString());
+                    ResultSet contractResultSet = pst.executeQuery();
+                    StringBuilder contractsResult = new StringBuilder();
+                    while (contractResultSet.next()){
+                        contractsResult.append(contractResultSet.getString(5))
+                                .append(" ")
+                                .append(contractResultSet.getString(2))
+                                .append(" ")
+                                .append(contractResultSet.getString(3))
+                                .append(" ")
+                                .append(contractResultSet.getString(4))
+                                .append("\n");
+                    }
+                    textFieldFactorial.setText(contractsResult.toString());
                     JOptionPane.showMessageDialog(null, "Выполенено успешно");
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(null, e);
@@ -90,7 +101,7 @@ public class Request3 {
 
             }
         });
-        button.setBounds(200, 280, 150, 25);
+        button.setBounds(200, 350, 150, 25);
         frame.getContentPane().add(button);
         button.setBorder(BorderFactory.createEmptyBorder());
         button.setContentAreaFilled(false);
@@ -102,7 +113,7 @@ public class Request3 {
                 Requests.main(new String[0]);
             }
         });
-        button5.setBounds(200, 320, 150, 25);
+        button5.setBounds(200, 400, 150, 25);
         frame.getContentPane().add(button5);
         button5.setBorder(BorderFactory.createEmptyBorder());
         button5.setContentAreaFilled(false);

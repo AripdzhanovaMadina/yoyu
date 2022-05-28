@@ -67,7 +67,7 @@ public class Request1 {
         frame.getContentPane().add(labelFactorial);
         codeTextField.setColumns(10);
 
-        textFieldFactorial = new JTextField();
+        JTextArea textFieldFactorial = new JTextArea();
         textFieldFactorial.setEditable(false);
         textFieldFactorial.setBounds(170, 120, 300, 140);
         frame.getContentPane().add(textFieldFactorial);
@@ -84,7 +84,14 @@ public class Request1 {
                     ResultSet contractResultSet = pst.executeQuery();
                     StringBuilder contractsResult = new StringBuilder();
                     while (contractResultSet.next()){
-                        contractsResult.append(contractResultSet.getString(2)).append("\n");
+                        contractsResult.append(contractResultSet.getString(2))
+                                .append(" ")
+                                .append(contractResultSet.getString(3))
+                                .append(" ")
+                                .append(contractResultSet.getString(5))
+                                .append(" ")
+                                .append(contractResultSet.getString(6))
+                                .append("\n");
                     }
                     textFieldFactorial.setText(contractsResult.toString());
                     JOptionPane.showMessageDialog(null, "Выполенено успешно");

@@ -162,8 +162,9 @@ public class Contract {
         button4.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 try{
-                    String sql = "DELETE FROM contract WHERE code = ?";
-                    pst = conn.prepareStatement(sql);
+                    String sqlPrefix = "DELETE FROM contract WHERE code = ";
+                    StringBuilder sql = new StringBuilder(sqlPrefix).append(codeTextField.getText());
+                    pst = conn.prepareStatement(sql.toString());
                     pst.execute();
                     JOptionPane.showMessageDialog(null, "Удалено успешно");
                 } catch (Exception e) {
@@ -198,7 +199,7 @@ public class Contract {
                     pst.setInt(1, Integer.valueOf(codeTextField.getText()));
                     pst.setString(2, nameTextField.getText());
                     pst.setInt(3, Integer.valueOf(summaTextField.getText()));
-                    pst.setInt(4, Integer.valueOf(tariffTextField.getText()));
+                    pst.setDouble(4, Double.valueOf(tariffTextField.getText()));
                     pst.setString(5, branchTextField.getText());
                     pst.setString(6, dataTextField.getText());
                     pst.setString(7, agentTextField.getText());
