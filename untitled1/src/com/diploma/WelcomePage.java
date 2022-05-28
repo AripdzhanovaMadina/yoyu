@@ -18,10 +18,10 @@ public class WelcomePage {
     JLabel welcomeLabel = new JLabel();
 
 
-    WelcomePage(String userID){
+    WelcomePage(String userID) {
         conn = Database.ConnecrDB();
-        welcomeLabel.setBounds(360,0,200,35);
-        welcomeLabel.setFont(new Font(null,Font.PLAIN,15));
+        welcomeLabel.setBounds(360, 0, 200, 35);
+        welcomeLabel.setFont(new Font(null, Font.PLAIN, 15));
         welcomeLabel.setText(userID);
 
         frame.add(welcomeLabel);
@@ -53,7 +53,8 @@ public class WelcomePage {
         Icon icon2 = new ImageIcon("src/resources/button_dogovor.PNG");
         JButton button2 = new JButton(icon2);
         button2.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {Contract.main(new String[0]);
+            public void actionPerformed(ActionEvent e) {
+                Contract.main(new String[0]);
             }
         });
         button2.setBounds(70, 185, 150, 25);
@@ -64,7 +65,8 @@ public class WelcomePage {
         Icon icon3 = new ImageIcon("src/resources/button_sotrudniki.PNG");
         JButton button3 = new JButton(icon3);
         button3.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {Employees.main(new String[0]);
+            public void actionPerformed(ActionEvent e) {
+                Employees.main(new String[0]);
             }
         });
         button3.setBounds(70, 230, 150, 25);
@@ -75,7 +77,8 @@ public class WelcomePage {
         Icon icon4 = new ImageIcon("src/resources/button_filialy.PNG");
         JButton button4 = new JButton(icon4);
         button4.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {Branch.main(new String[0]);
+            public void actionPerformed(ActionEvent e) {
+                Branch.main(new String[0]);
             }
         });
         button4.setBounds(70, 275, 150, 25);
@@ -85,22 +88,21 @@ public class WelcomePage {
 
         Icon icon5 = new ImageIcon("src/resources/button_zaprosy.PNG");
         JButton button5 = new JButton(icon5);
-       button1.addActionListener(new ActionListener() {
-           public void actionPerformed(ActionEvent e) {
-               Requests.main(new String[0]);
-           }
-       });
-       button5.setBounds(70, 320, 150, 25);
-       frame.getContentPane().add(button5);
-       button5.setBorder(BorderFactory.createEmptyBorder());
+        button1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                Requests.main(new String[0]);
+            }
+        });
+        button5.setBounds(70, 320, 150, 25);
+        frame.getContentPane().add(button5);
+        button5.setBorder(BorderFactory.createEmptyBorder());
         button5.setContentAreaFilled(false);
 
-        ImageIcon icon6 =  new ImageIcon("src/resources/Venera.PNG");
+        ImageIcon icon6 = new ImageIcon("src/resources/Venera.PNG");
         JLabel Venera = new JLabel(icon6);
         Venera.setBounds(250, 40, 500, 500);
         frame.getContentPane().add(Venera);
     }
 
 
-
-    }
+}

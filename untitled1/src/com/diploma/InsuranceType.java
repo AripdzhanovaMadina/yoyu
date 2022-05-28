@@ -118,8 +118,9 @@ public class InsuranceType {
         button4.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 try{
-                    String sql = "DELETE FROM Insurance_type WHERE Code = ?";
-                    pst = conn.prepareStatement(sql);
+                    String sqlPrefix = "DELETE FROM Insurance_type WHERE Code = ";
+                    StringBuilder sql = new StringBuilder(sqlPrefix).append(codeTextField.getText());
+                    pst = conn.prepareStatement(sql.toString());
                     pst.execute();
                     JOptionPane.showMessageDialog(null, "Удалено успешно");
                 } catch (Exception e) {
