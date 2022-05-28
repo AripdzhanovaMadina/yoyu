@@ -117,6 +117,17 @@ public class Requests {
         button4.setBorder(BorderFactory.createEmptyBorder());
         button4.setContentAreaFilled(false);
 
+        Icon icon5 = new ImageIcon("src/resources/button_zapros-agenty.png");
+        JButton button5 = new JButton(icon5);
+        button5.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {Request4.main(new String[0]);
+            }
+        });
+        button5.setBounds(40, 320, 210, 30);
+        frame.getContentPane().add(button5);
+        button5.setBorder(BorderFactory.createEmptyBorder());
+        button5.setContentAreaFilled(false);
+
         ImageIcon icon6 =  new ImageIcon("src/resources/Venera.PNG");
         JLabel Venera = new JLabel(icon6);
         Venera.setBounds(250, 40, 500, 500);
