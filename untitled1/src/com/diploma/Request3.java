@@ -106,6 +106,16 @@ public class Request3 {
         button.setBorder(BorderFactory.createEmptyBorder());
         button.setContentAreaFilled(false);
 
+        Icon icon2 = new ImageIcon("src/resources/button_otkryt-tablicu.png");
+        JButton button1 = new JButton(icon2);
+        button1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {JFrame1.main(new String[0]);}
+        });
+        button1.setBounds(360, 350, 150, 25);
+        frame.getContentPane().add(button1);
+        button1.setBorder(BorderFactory.createEmptyBorder());
+        button1.setContentAreaFilled(false);
+
         Icon icon5 = new ImageIcon("src/resources/button_nazad.PNG");
         JButton button5 = new JButton(icon5);
         button5.addActionListener(new ActionListener() {

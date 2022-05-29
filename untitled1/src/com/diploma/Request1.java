@@ -69,7 +69,7 @@ public class Request1 {
 
         JTextArea textFieldFactorial = new JTextArea();
         textFieldFactorial.setEditable(false);
-        textFieldFactorial.setBounds(170, 120, 300, 140);
+        textFieldFactorial.setBounds(170, 120, 500, 200);
         frame.getContentPane().add(textFieldFactorial);
         textFieldFactorial.setColumns(10);
 
@@ -101,10 +101,20 @@ public class Request1 {
 
             }
         });
-        button.setBounds(200, 280, 150, 25);
+        button.setBounds(200, 350, 150, 25);
         frame.getContentPane().add(button);
         button.setBorder(BorderFactory.createEmptyBorder());
         button.setContentAreaFilled(false);
+
+        Icon icon2 = new ImageIcon("src/resources/button_otkryt-tablicu.png");
+        JButton button1 = new JButton(icon2);
+        button1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {JFrame1.main(new String[0]);}
+        });
+        button1.setBounds(360, 350, 150, 25);
+        frame.getContentPane().add(button1);
+        button1.setBorder(BorderFactory.createEmptyBorder());
+        button1.setContentAreaFilled(false);
 
         Icon icon5 = new ImageIcon("src/resources/button_nazad.PNG");
         JButton button5 = new JButton(icon5);
@@ -113,7 +123,7 @@ public class Request1 {
                 Requests.main(new String[0]);
             }
         });
-        button5.setBounds(200, 320, 150, 25);
+        button5.setBounds(200, 400, 150, 25);
         frame.getContentPane().add(button5);
         button5.setBorder(BorderFactory.createEmptyBorder());
         button5.setContentAreaFilled(false);
