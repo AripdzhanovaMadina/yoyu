@@ -135,10 +135,10 @@ public class Clients {
 
                             +  " id = " + codeTextField.getText()+","
                             +  " surname = '" + nameTextField.getText()+"',"
-                            +  " name = " + summaTextField.getText()+ "',"
-                            +  " patronymic = " + tariffTextField.getText()+ "',"
-                            +  " telephone = " + branchTextField.getText()+ "',"
-                            +  " passport = " + dataTextField.getText()+ "',"
+                            +  " name = '" + summaTextField.getText()+ "',"
+                            +  " patronymic = '" + tariffTextField.getText()+ "',"
+                            +  " telephone = '" + branchTextField.getText()+ "',"
+                            +  " passport = " + dataTextField.getText()+ ","
                             +  " INN = " + agentTextField.getText()+
                             " WHERE id = " +codeTextField.getText();
 

@@ -125,6 +125,15 @@ public class Contract {
         frame.getContentPane().add(agentTextField);
         agentTextField.setColumns(10);
 
+        JLabel clientLabel = new JLabel("Код клиента");
+        clientLabel.setFont(new Font(null,Font.PLAIN,14));
+        clientLabel.setBounds(50, 362, 120, 30);
+        frame.getContentPane().add(clientLabel);
+
+        JTextField  clientTextField = new JTextField();
+        clientTextField.setBounds(170, 370, 300, 20);
+        frame.getContentPane().add(clientTextField);
+        clientTextField.setColumns(10);
 
         Icon icon1 = new ImageIcon("src/resources/button_obnovit.png");
         JButton button3 = new JButton(icon1);
@@ -135,11 +144,12 @@ public class Contract {
 
                             +  " code = " + codeTextField.getText()+","
                             +  " name = '" + nameTextField.getText()+"',"
-                            +  " Summa = " + summaTextField.getText()+ "',"
-                            +  " Tariff = " + tariffTextField.getText()+ "',"
-                            +  " Branch = " + branchTextField.getText()+ "',"
-                            +  " data = " + dataTextField.getText()+ "',"
-                            +  " Agent = " + agentTextField.getText()+
+                            +  " Summa = " + summaTextField.getText()+ ","
+                            +  " Tariff = " + tariffTextField.getText()+ ","
+                            +  " Branch = '" + branchTextField.getText()+ "',"
+                            +  " data = '" + dataTextField.getText()+ "',"
+                            +  " Agent = '" + agentTextField.getText()+"',"
+                            + " client = " + clientTextField.getText()+
                             " WHERE code = " +codeTextField.getText();
 
 
@@ -152,7 +162,7 @@ public class Contract {
                 }
             }
         });
-        button3.setBounds(100, 420, 150, 25);
+        button3.setBounds(100, 460, 150, 25);
         frame.getContentPane().add(button3);
         button3.setBorder(BorderFactory.createEmptyBorder());
         button3.setContentAreaFilled(false);
@@ -172,7 +182,7 @@ public class Contract {
                 }
             }
         });
-        button4.setBounds(300, 420, 150, 25);
+        button4.setBounds(300, 460, 150, 25);
         frame.getContentPane().add(button4);
         button4.setBorder(BorderFactory.createEmptyBorder());
         button4.setContentAreaFilled(false);
@@ -183,7 +193,7 @@ public class Contract {
         button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {JFrame1.main(new String[0]);}
         });
-        button1.setBounds(100, 380, 150, 25);
+        button1.setBounds(100, 420, 150, 25);
         frame.getContentPane().add(button1);
         button1.setBorder(BorderFactory.createEmptyBorder());
         button1.setContentAreaFilled(false);
@@ -193,7 +203,7 @@ public class Contract {
         JButton button = new JButton(icon3);
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-                String sql = "INSERT INTO contract(Code, name, Summa, Tariff, Branch, data, Agent) VALUES (?, ?, ?, ?, ?, ?, ?)";
+                String sql = "INSERT INTO contract(Code, name, Summa, Tariff, Branch, data, Agent, client) VALUES (?, ?, ?, ?, ?, ?, ?)";
                 try{
                     pst = conn.prepareStatement(sql);
                     pst.setInt(1, Integer.valueOf(codeTextField.getText()));
@@ -203,6 +213,7 @@ public class Contract {
                     pst.setString(5, branchTextField.getText());
                     pst.setString(6, dataTextField.getText());
                     pst.setString(7, agentTextField.getText());
+                    pst.setInt(8, Integer.valueOf(clientTextField.getText()));
                     pst.execute();
 
                     JOptionPane.showMessageDialog(null, "Добавлено успешно");
@@ -211,7 +222,7 @@ public class Contract {
                 }
             }
         });
-        button.setBounds(300, 380, 150, 25);
+        button.setBounds(300, 420, 150, 25);
         frame.getContentPane().add(button);
         button.setBorder(BorderFactory.createEmptyBorder());
         button.setContentAreaFilled(false);

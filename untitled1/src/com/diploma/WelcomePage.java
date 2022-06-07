@@ -26,7 +26,7 @@ public class WelcomePage {
 
         frame.add(welcomeLabel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1000, 1000);
+        frame.setSize(800, 700);
         frame.setLayout(null);
         frame.getContentPane().setLayout(null);
         frame.getContentPane().setBackground(new java.awt.Color(247, 251, 252));
@@ -98,7 +98,7 @@ public class WelcomePage {
         button5.setBorder(BorderFactory.createEmptyBorder());
         button5.setContentAreaFilled(false);
 
-        Icon icon6 = new ImageIcon("src/resources/button_klienty.PNG");
+        Icon icon6 = new ImageIcon("src/resources/button_zaprosy.PNG");
         JButton button6 = new JButton(icon6);
         button6.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -106,7 +106,7 @@ public class WelcomePage {
             }
         });
         button6.setBounds(70, 325, 150, 25);
-        frame.getContentPane().add(button5);
+        frame.getContentPane().add(button6);
         button6.setBorder(BorderFactory.createEmptyBorder());
         button6.setContentAreaFilled(false);
 

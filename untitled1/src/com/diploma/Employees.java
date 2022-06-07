@@ -117,7 +117,7 @@ public class Employees {
                             +  " address = '" + addressTextField.getText()+"',"
                             +  " Telephone = '" + telephoneTextField.getText()+"',"
                             +  " Code = '" + codeTextField.getText()+
-                            " WHERE Agent = " +agentTextField.getText();
+                            "' WHERE Agent = " +agentTextField.getText();
 
 
                     pst = conn.prepareStatement(sql);

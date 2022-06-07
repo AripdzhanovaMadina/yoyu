@@ -104,9 +104,9 @@ public class Branch {
 
                             +  " code = " + codeTextField.getText()+","
                             +  " Name = '" + nameTextField.getText()+"',"
-                            +  " address = " + addressTextField.getText()+ "',"
-                            +  " Telephone = " + telephoneTextField.getText()+
-                            " WHERE Code = " +codeTextField.getText();
+                            +  " address = '" + addressTextField.getText()+ "',"
+                            +  " Telephone = '" + telephoneTextField.getText()+
+                            "' WHERE Code = " +codeTextField.getText();
 
 
                     pst = conn.prepareStatement(sql);
