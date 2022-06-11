@@ -108,14 +108,7 @@ public class JFrame1 extends JFrame {
             // connect to db (file test.db must lay in the project dir)
             // NOTE: it will be created if not exists
             Class.forName("org.sqlite.JDBC");
-            conn = DriverManager.getConnection("jdbc:sqlite:src/resources/Insurance Company.db");
-            
-            // create table "Table 1" if not exists
-            Statement stmt = conn.createStatement();
-            String sql = "CREATE TABLE IF NOT EXISTS [Table 1] (id INTEGER PRIMARY KEY AUTOINCREMENT, 'text column' TEXT, 'int column' INTEGER);";
-            stmt.executeUpdate(sql);
-            stmt.close();
-            
+            conn = DriverManager.getConnection("jdbc:sqlite:C:/Diploma/insurancecompany.db");
              // get all tables in db and them names to combobox
             ResultSet rs = null;
             DatabaseMetaData meta = conn.getMetaData();
@@ -127,7 +120,7 @@ public class JFrame1 extends JFrame {
             }
             jComboBox1.updateUI();
         } catch ( Exception e ) {
-            
+
         }
     }//GEN-LAST:event_formWindowOpened
 

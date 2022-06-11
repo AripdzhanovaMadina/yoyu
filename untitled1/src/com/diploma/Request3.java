@@ -73,7 +73,7 @@ public class Request3 {
         frame.getContentPane().add(textFieldFactorial);
         textFieldFactorial.setColumns(10);
 
-        Icon icon1 = new ImageIcon("src/resources/button_vypolnit.PNG");
+        Icon icon1 = new ImageIcon(getClass().getResource("/resources/button_vypolnit.png"));
         JButton button = new JButton(icon1);
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -106,7 +106,7 @@ public class Request3 {
         button.setBorder(BorderFactory.createEmptyBorder());
         button.setContentAreaFilled(false);
 
-        Icon icon2 = new ImageIcon("src/resources/button_otkryt-tablicu.png");
+        Icon icon2 = new ImageIcon(getClass().getResource("/resources/button_otkryt-tablicu.png"));
         JButton button1 = new JButton(icon2);
         button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {JFrame1.main(new String[0]);}
@@ -116,7 +116,7 @@ public class Request3 {
         button1.setBorder(BorderFactory.createEmptyBorder());
         button1.setContentAreaFilled(false);
 
-        Icon icon5 = new ImageIcon("src/resources/button_nazad.PNG");
+        Icon icon5 = new ImageIcon(getClass().getResource("/resources/button_nazad.png"));
         JButton button5 = new JButton(icon5);
         button5.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

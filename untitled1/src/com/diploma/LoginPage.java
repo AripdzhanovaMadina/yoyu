@@ -3,13 +3,15 @@ package com.diploma;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URL;
 import java.util.*;
 import javax.swing.*;
 
 public class LoginPage implements ActionListener{
 
     JFrame frame = new JFrame();
-    Icon icon1 = new ImageIcon("src/resources/button_vojti.PNG");
+    Icon icon1 = new ImageIcon(getClass().getResource("/resources/button_vojti.png"));
     JButton loginButton = new JButton(icon1);
     JTextField userIDField = new JTextField();
     JPasswordField userPasswordField = new JPasswordField();

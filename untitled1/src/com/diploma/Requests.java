@@ -67,7 +67,7 @@ public class Requests {
         frame.getContentPane().setBackground(new java.awt.Color(247, 251, 252));
 
 
-        Icon icon1 = new ImageIcon("src/resources/button_zapros-vid-straxovaniya.png");
+        Icon icon1 = new ImageIcon(getClass().getResource("/resources/button_zapros-vid-straxovaniya.png"));
         // Создается локальная переменная button
         JButton button1
 // создается кнопка с надписью
@@ -84,7 +84,7 @@ public class Requests {
         button1.setBorder(BorderFactory.createEmptyBorder());
         button1.setContentAreaFilled(false);
 
-        Icon icon2 = new ImageIcon("src/resources/button_zapros-data.png");
+        Icon icon2 = new ImageIcon(getClass().getResource("/resources/button_zapros-data.png"));
         JButton button2 = new JButton(icon2);
         button2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {Request2.main(new String[0]);
@@ -95,7 +95,7 @@ public class Requests {
         button2.setBorder(BorderFactory.createEmptyBorder());
         button2.setContentAreaFilled(false);
 
-        Icon icon3 = new ImageIcon("src/resources/button_zapros-sotrudniki.png");
+        Icon icon3 = new ImageIcon(getClass().getResource("/resources/button_zapros-sotrudniki.png"));
         JButton button3 = new JButton(icon3);
         button3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {Request3.main(new String[0]);
@@ -106,7 +106,7 @@ public class Requests {
         button3.setBorder(BorderFactory.createEmptyBorder());
         button3.setContentAreaFilled(false);
 
-        Icon icon4 = new ImageIcon("src/resources/button_zapros-filialy.png");
+        Icon icon4 = new ImageIcon(getClass().getResource("/resources/button_zapros-filialy.png"));
         JButton button4 = new JButton(icon4);
         button4.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {Request4.main(new String[0]);
@@ -117,7 +117,7 @@ public class Requests {
         button4.setBorder(BorderFactory.createEmptyBorder());
         button4.setContentAreaFilled(false);
 
-        Icon icon5 = new ImageIcon("src/resources/button_zapros-agenty.png");
+        Icon icon5 = new ImageIcon(getClass().getResource("/resources/button_zapros-agenty.png"));
         JButton button5 = new JButton(icon5);
         button5.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {Request4.main(new String[0]);
@@ -128,7 +128,7 @@ public class Requests {
         button5.setBorder(BorderFactory.createEmptyBorder());
         button5.setContentAreaFilled(false);
 
-        ImageIcon icon6 =  new ImageIcon("src/resources/Venera.PNG");
+        ImageIcon icon6 =  new ImageIcon(getClass().getResource("/resources/Venera.png"));
         JLabel Venera = new JLabel(icon6);
         Venera.setBounds(250, 40, 500, 500);
         frame.getContentPane().add(Venera);

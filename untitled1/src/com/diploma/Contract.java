@@ -135,7 +135,7 @@ public class Contract {
         frame.getContentPane().add(clientTextField);
         clientTextField.setColumns(10);
 
-        Icon icon1 = new ImageIcon("src/resources/button_obnovit.png");
+        Icon icon1 = new ImageIcon(getClass().getResource("/resources/button_obnovit.png"));
         JButton button3 = new JButton(icon1);
         button3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -167,7 +167,7 @@ public class Contract {
         button3.setBorder(BorderFactory.createEmptyBorder());
         button3.setContentAreaFilled(false);
 
-        Icon icon4 = new ImageIcon("src/resources/button_udalit.png");
+        Icon icon4 = new ImageIcon(getClass().getResource("/resources/button_udalit.png"));
         JButton button4 = new JButton(icon4);
         button4.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -188,7 +188,7 @@ public class Contract {
         button4.setContentAreaFilled(false);
 
 
-        Icon icon2 = new ImageIcon("src/resources/button_otkryt-tablicu.png");
+        Icon icon2 = new ImageIcon(getClass().getResource("/resources/button_otkryt-tablicu.png"));
         JButton button1 = new JButton(icon2);
         button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {JFrame1.main(new String[0]);}
@@ -199,7 +199,7 @@ public class Contract {
         button1.setContentAreaFilled(false);
 
 
-        Icon icon3 = new ImageIcon("src/resources/button_dobavit.png");
+        Icon icon3 = new ImageIcon(getClass().getResource("/resources/button_dobavit.png"));
         JButton button = new JButton(icon3);
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {

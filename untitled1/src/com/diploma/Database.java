@@ -13,7 +13,7 @@ public class Database {
 
         try{
             Class.forName("org.sqlite.JDBC");
-            Connection conn = DriverManager.getConnection("jdbc:sqlite:src/resources/Insurance Company.db");
+            Connection conn = DriverManager.getConnection("jdbc:sqlite:C:/Diploma/insurancecompany.db");
             Statement statement = conn.createStatement();
             JOptionPane.showMessageDialog(null, "Connection");
             return conn;
