@@ -203,7 +203,7 @@ public class Contract {
         JButton button = new JButton(icon3);
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-                String sql = "INSERT INTO contract(Code, name, Summa, Tariff, Branch, data, Agent, client) VALUES (?, ?, ?, ?, ?, ?, ?)";
+                String sql = "INSERT INTO contract(Code, name, Summa, Tariff, Branch, data, Agent, client) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
                 try{
                     pst = conn.prepareStatement(sql);
                     pst.setInt(1, Integer.valueOf(codeTextField.getText()));
